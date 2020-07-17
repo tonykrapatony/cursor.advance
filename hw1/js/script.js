@@ -1,18 +1,18 @@
 window.onload = function() {
-    const num1 = 15.678,
-          num2 = 123.965,
-          num3 = 90.2345, 
-          maxNum = Math.max(num1, num2, num3),
-          minNum = Math.min(num1, num2, num3),
-          sumNum = num1+num2+num3,
-          sumRound = Math.round(num1)+Math.round(num2)+Math.round(num3),
-          sumRound100 =  Math.round(sumNum / 100) * 100,
-          sumIsEven ,
-          change = 500 - sumNum,
-          average = (sumNum/3).toFixed(2),
-          randomDiscount = (Math.random()*100).toFixed(0),
-          dicountPrice = (sumNum - (sumNum/100)* randomDiscount).toFixed(2),
-          profit = Math.trunc((sumNum/2) - (sumNum/100) * randomDiscount);
+    const num1 = 15.678;
+    const num2 = 123.965;
+    const num3 = 90.2345; 
+    const maxNum = Math.max(num1, num2, num3);
+    const minNum = Math.min(num1, num2, num3);
+    const sumNum = num1+num2+num3;
+    const sumRound = Math.round(num1)+Math.round(num2)+Math.round(num3);
+    const sumRound100 =  Math.round(sumNum / 100) * 100;
+    const sumIsEven;
+    const change = 500 - sumNum;
+    const average = (sumNum/3).toFixed(2);
+    const randomDiscount = (Math.random()*100).toFixed(0);
+    const dicountPrice = (sumNum - (sumNum/100)* randomDiscount).toFixed(2);
+    const profit = Math.trunc((sumNum/2) - (sumNum/100) * randomDiscount);
         
      if (sumRound%2===0) {
         sumIsEven = "Так";
@@ -38,7 +38,7 @@ window.onload = function() {
     document.writeln("<h3>Advanced</h3>"); 
     document.writeln("<p class="+"advanced"+"></p>");
     
-    let advanced = `<p>Максимальне число: ${maxNum}</p>
+    const advanced = `<p>Максимальне число: ${maxNum}</p>
                     <p>Мінімальне число: ${minNum}</p>
                     <p>Сума чисел: "${sumNum}</p>
                     <p>Сума чисел округлена до меншого: ${sumRound}</p>
