@@ -1,8 +1,8 @@
 window.onload = function() {
     const  a = Number(prompt('Enter first number'));
     const  b = Number(prompt('Enter second number'));
-    const  even;
-    let  result = 0;
+    let even;
+    let result = 0;
     
     if (Number.isInteger(a)){
     } else {
