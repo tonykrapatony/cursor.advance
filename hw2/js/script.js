@@ -4,29 +4,32 @@ window.onload = function() {
     let even;
     let result = 0;
     
-    if (Number.isInteger(a)){
+    if (Number.isInteger(a) && Number.isInteger(b)){
+        
+        if (a < b){
+            even = confirm('Skip even numbers?');
+            for ( let i=a; i<=b; i++) {
+
+                if(even && i % 2 === 0) {
+                    continue
+                }
+                result += i;
+    //            console.log(result);
+            } 
+            alert('Result = '+result);
+        } else {
+            alert ('Second number must be bigger');
+            location.reload(true);
+        }
+        
+    } else if (isNaN(a)) {
+        alert ('Error, first number is not integer');
+//        console.log(a);
+//        console.log(b);
     } else {
-        alert('Error, first number is not integer');
-    };
-    if (Number.isInteger(b)){
-    } else {
-        alert('Error, second number is not integer');
-    };
-    
-    if (a < b){
-        even = confirm('Skip even numbers?');
-        for ( let i=a; i<=b; i++) {
-            
-            if(even && i % 2 === 0) {
-                continue
-            }
-            result += i;
-//            console.log(result);
-        } 
-        alert('Result = '+result);
-    } else {
-        alert ('Second number must be bigger');
-        location.reload(true);
+        alert ('Error, second number is not integer');
+//        console.log(a);
+//        console.log(b);
     }
     
 };

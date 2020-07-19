@@ -7,7 +7,7 @@ window.onload = function() {
     const sumNum = num1+num2+num3;
     const sumRound = Math.round(num1)+Math.round(num2)+Math.round(num3);
     const sumRound100 =  Math.round(sumNum / 100) * 100;
-    const sumIsEven;
+    let sumIsEven;
     const change = 500 - sumNum;
     const average = (sumNum/3).toFixed(2);
     const randomDiscount = (Math.random()*100).toFixed(0);
