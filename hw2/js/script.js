@@ -1,12 +1,18 @@
 window.onload = function() {
-    const  a = Number(prompt('Enter first number'));
-    const  b = Number(prompt('Enter second number'));
+//    const  a = Number(prompt('Enter first number'));
+//    const  b = Number(prompt('Enter second number'));
     let even;
     let result = 0;
     
-    if (Number.isInteger(a) && Number.isInteger(b)){
-        
-        if (a < b){
+    const  a = Number(prompt('Enter first number'));
+    if (isNaN(a)) {
+        alert ('Error, first number is not integer');
+    } else {
+        const  b = Number(prompt('Enter second number'));
+        if (isNaN(b)) {
+            alert ('Error, second number is not integer');
+        }
+        else if (a < b){
             even = confirm('Skip even numbers?');
             for ( let i=a; i<=b; i++) {
 
@@ -20,16 +26,6 @@ window.onload = function() {
         } else {
             alert ('Second number must be bigger');
             location.reload(true);
-        }
-        
-    } else if (isNaN(a)) {
-        alert ('Error, first number is not integer');
-//        console.log(a);
-//        console.log(b);
-    } else {
-        alert ('Error, second number is not integer');
-//        console.log(a);
-//        console.log(b);
-    }
-    
+        } 
+    }    
 };
