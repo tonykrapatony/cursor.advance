@@ -98,6 +98,27 @@ document.querySelector('.func6 button').addEventListener('click', function(){
     countLetter(startWord, startLetter);
 })
 //fn7
+document.querySelector('.func7 button').addEventListener('click', function(){
+    const dolar = document.querySelector('.func7 input').value; 
+    
+    function convertCurrency(dolar) {
+        let uah = '';
+        for (let i=0; i<dolar.length; i++) {
+            if (dolar[i] === '$'){
+                uah = (parseInt(dolar)/27).toFixed(2);
+            } else if (isNaN(dolar[i])){
+                uah = 'Ви ввели букви замість чисел';
+            } else {
+                uah = 'Додайте до суми знак $';
+            }
+        }
+        
+        return document.querySelector('.func7 span').innerHTML = ' = ' + uah + ' uah';
+    }
+    
+    convertCurrency(dolar);
+})
+//fn8
 document.querySelector('.func8 button').addEventListener('click', function(){
     const n = document.querySelector('.func8 input').value; 
     
@@ -115,7 +136,6 @@ document.querySelector('.func8 button').addEventListener('click', function(){
                 password += randomNum;
             }
         }
-        
         return document.querySelector('.func8 span').innerHTML = ' = ' + password;
     }
     
