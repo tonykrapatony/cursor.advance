@@ -104,7 +104,7 @@ document.querySelector('.func7 button').addEventListener('click', function(){
     function convertCurrency(dolar) {
         let uah = '';
         for (let i=0; i<dolar.length; i++) {
-            if (dolar[i] === '$'){
+            if (dolar[i] === '$' && !isNaN(dolar[i]) ){
                 uah = (parseInt(dolar)/27).toFixed(2);
             } else if (isNaN(dolar[i])){
                 uah = 'Ви ввели букви замість чисел';
@@ -138,7 +138,65 @@ document.querySelector('.func8 button').addEventListener('click', function(){
         }
         return document.querySelector('.func8 span').innerHTML = ' = ' + password;
     }
-    
     getRandomPassword(n);
+
+})
+//fn9
+document.querySelector('.func9 button').addEventListener('click', function(){
+    const word = document.querySelector('.func9 .word').value; 
+    const letter = document.querySelector('.func9 .letter').value; 
+    
+    function deleteLetter(word, letter) {
+        const newWord = word.toLowerCase();
+        const newLetter = letter.toLowerCase();
+        let result = '';
+        
+        for(let i=0; i<word.length; i++){
+            if (newWord[i] !== newLetter){
+                result += word[i];
+            }
+        }
+        
+        return document.querySelector('.func9 span').innerHTML = ' = ' + result;
+    }
+    deleteLetter(word, letter);
+
+})
+//fn10
+document.querySelector('.func10 button').addEventListener('click', function(){
+    const word = document.querySelector('.func10 .word').value; 
+    
+    function isPalyndrom(word) {
+        const newWord = word.replace(/\s+/g, '').toLowerCase();
+        const reversWord = newWord.split('').reverse().join('').toLowerCase();
+        let result = '';
+        
+        if (newWord === reversWord){
+            result = 'Так';
+        } else {
+            result = 'Ні';
+        } 
+        
+        return document.querySelector('.func10 span').innerHTML = ' = ' + result;
+    }
+    isPalyndrom(word);
+
+})
+//fn11
+document.querySelector('.func11 button').addEventListener('click', function(){
+    const str = document.querySelector('.sentence').value; 
+    
+    function find_unique_characters(str) {
+        let unique = '';
+        const newStr = str.toLowerCase();
+        for (var i = 0; i < str.length; i++) {
+            if (newStr.lastIndexOf(newStr[i]) === newStr.indexOf(newStr[i])) {
+                unique += str[i];
+            }
+        }
+        return document.querySelector('.func11 span').innerHTML = ' = ' + unique;
+    }
+    
+    find_unique_characters(str);
 
 })
