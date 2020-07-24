@@ -99,24 +99,25 @@ document.querySelector('.func6 button').addEventListener('click', function(){
 })
 //fn7
 document.querySelector('.func7 button').addEventListener('click', function(){
-    const dolar = document.querySelector('.func7 input').value; 
+    const sum = document.querySelector('.func7 input').value; 
     
-    function convertCurrency(dolar) {
-        let uah = '';
-        for (let i=0; i<dolar.length; i++) {
-            if (dolar[i] === '$'){
-                uah = (parseInt(dolar)/27).toFixed(2) + ' uah';
-            } else if ( (isNaN(dolar[i]))){
-                uah = 'Ви ввели букви замість чисел';
-            } else {
-                uah = 'Додайте до суми знак $';
-            }
+    function convertCurrency(sum) {
+        let result = '';
+        if (sum.slice(-1) === '$'){
+            result = (parseInt(sum) * 27).toFixed(2) + '$';
+            
+        } else if (sum.slice(-3).toLowerCase() === 'uah') {
+            result = ((parseInt(sum))/ 27).toFixed(2)  + '$';
+            console.log(sum==='');
+        } else {
+            result = 'Введіть $ або uah';
+            
         }
-        
-        return document.querySelector('.func7 span').innerHTML = ' = ' + uah;
+     
+        return document.querySelector('.func7 span').innerHTML = ' = ' + result;
     }
     
-    convertCurrency(dolar);
+    convertCurrency(sum);
 })
 //fn8
 document.querySelector('.func8 button').addEventListener('click', function(){
