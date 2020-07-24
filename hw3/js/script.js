@@ -104,16 +104,16 @@ document.querySelector('.func7 button').addEventListener('click', function(){
     function convertCurrency(dolar) {
         let uah = '';
         for (let i=0; i<dolar.length; i++) {
-            if (dolar[i] === '$' && !isNaN(dolar[i]) ){
-                uah = (parseInt(dolar)/27).toFixed(2);
-            } else if (isNaN(dolar[i])){
+            if (dolar[i] === '$'){
+                uah = (parseInt(dolar)/27).toFixed(2) + ' uah';
+            } else if ( (isNaN(dolar[i]))){
                 uah = 'Ви ввели букви замість чисел';
             } else {
                 uah = 'Додайте до суми знак $';
             }
         }
         
-        return document.querySelector('.func7 span').innerHTML = ' = ' + uah + ' uah';
+        return document.querySelector('.func7 span').innerHTML = ' = ' + uah;
     }
     
     convertCurrency(dolar);
