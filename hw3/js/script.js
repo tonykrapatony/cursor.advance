@@ -18,7 +18,7 @@ document.querySelector('.func2 button').addEventListener('click', function(){
     const basis = document.querySelector('.basis').value; 
     const degree = document.querySelector('.degree').value; 
     function toDegree(basis, degree){
-        let resuslt = 0;
+        let resuslt = 1;
         let toDegree = 1;
         if (degree >= 0) {
             for (let i=0; i<+degree; i++){
@@ -67,7 +67,12 @@ document.querySelector('.func5 button').addEventListener('click', function(){
     
     
     function getRandomNumber(min, max) {
-        let result = Math.ceil((Math.random() * (max - min) + min));
+        let result;
+        if (min<max) {
+            result = Math.ceil((Math.random() * (max - min) + min));
+        } else {
+            result = (Math.ceil((Math.random() * (min - max) + max)));
+        }
         return document.querySelector('.func5 span').innerHTML = ' = ' + result;
     }
     
