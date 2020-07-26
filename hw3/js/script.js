@@ -29,34 +29,31 @@ function toDegree(basis, degree){
 }
 
 //fn3
-    function formatName(name){
-        let format = '';
-        
-        format = name[0].toUpperCase() + name.slice(1).toLowerCase(); 
-        
-        return format;
-    }
+function formatName(name){
+    let format = '';
+    
+    format = name[0].toUpperCase() + name.slice(1).toLowerCase(); 
+    
+    return format;
+}
 
 
 //fn4
-    function formatName(number){
-        let result = number - ((number*19.5)/100);
-        return result;
-    }
+function formatName(number){
+    let result = number - ((number*19.5)/100);
+    return result;
+}
 
 //fn5
-    function getRandomNumber(min, max) {
-        let result;
-        if (min<max) {
-            result = Math.floor(min + Math.random() * (max + 1 - min));
-        } else {
-            result = Math.floor(max + Math.random() * (min + 1 - max));
-        }
-        return result;
+function getRandomNumber(min, max) {
+    let result;
+    if (min<max) {
+        result = Math.floor(min + Math.random() * (max + 1 - min));
+    } else {
+        result = Math.floor(max + Math.random() * (min + 1 - max));
     }
-
-
-
+    return result;
+}
 
 //fn6
 function countLetter(startWord, startLetter) {
@@ -77,21 +74,21 @@ function countLetter(startWord, startLetter) {
 
 
 //fn7
-    function convertCurrency(sum) {
-        let result = '';
-        if (sum.slice(-1) === '$'){
-            result = (parseInt(sum) * 27).toFixed(2) + '$';
-            
-        } else if (sum.slice(-3).toLowerCase() === 'uah') {
-            result = ((parseInt(sum))/ 27).toFixed(2)  + '$';
-            console.log(sum==='');
-        } else {
-            result = 'Введіть $ або uah';
-            
-        }
-     
-        return result;
+function convertCurrency(sum) {
+    let result = '';
+    if (sum.slice(-1) === '$'){
+        result = (parseInt(sum) * 27).toFixed(2) + '$';
+        
+    } else if (sum.slice(-3).toLowerCase() === 'uah') {
+        result = ((parseInt(sum))/ 27).toFixed(2)  + 'uah';
+        console.log(sum==='');
+    } else {
+        result = 'Введіть $ або uah';
+        
     }
+ 
+    return result;
+}
 
 
 //fn8
