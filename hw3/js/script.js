@@ -39,8 +39,8 @@ function formatName(name){
 
 
 //fn4
-function formatName(number){
-    let result = number - ((number*19.5)/100);
+function calcTax(number){
+    const result = number - ((number*19.5)/100);
     return result;
 }
 
@@ -180,7 +180,7 @@ document.querySelector('.func3 button').addEventListener('click', function(){
 document.querySelector('.func4 button').addEventListener('click', function(){
     const number = document.querySelector('.func4 input').value;
 
-    document.querySelector('.func4 span').innerHTML = ' = ' + formatName(number);
+    document.querySelector('.func4 span').innerHTML = ' = ' + calcTax(number);
 })
 
 document.querySelector('.func5 button').addEventListener('click', function(){

@@ -3,24 +3,24 @@ const themes = ["Диференційне рівняння", "Теорія ав�
 const marks = [4, 5, 5, 3, 4, 5];
 
 function getRandomNumber(min, max) {
-    let result = Math.floor(min + Math.random() * (max + 1 - min));
+    const result = Math.floor(min + Math.random() * (max + 1 - min));
     return result;
 }
 
 function getPair(){
-    let x = [];
-    let y = [];    
-    let pairs = [];    
+    const boys = [];
+    const girls = [];    
+    const pairs = [];    
     
     students.forEach(function(students){
         if(students.endsWith('на') || students.endsWith('ра')){
-            y.push(students);
+            girls.push(students);
         } else {
-            x.push(students);
+            boys.push(students);
         } 
     });
     for(let i = 0; i <students.length/2; i++){
-        pairs.push([x[i] + ' та ' + y[i]]);
+        pairs.push(' '+[boys[i] + ' та ' + girls[i]]);
     }
     
     return pairs;
@@ -28,35 +28,28 @@ function getPair(){
 
 
 function pairAndSubject(n, m){
-    let arr = [];
-    let result = '';
+    const arr = [];
     
     for(let i=0; i<themes.length; i++){
-        arr.push(pairs[i] + ' - ' + themes[i]);
-        result += '<p>'+arr[i]+'</p>'
+        arr.push(pairs[i] + ' - ' + themes[i]+' ');
     }
-    return result;
+    return arr;
 }
 
 function studentsRating(){
-    let arr = [];
-    let result = '';
+    const arr = [];
     for(let i=0; i<students.length; i++){
-        arr.push(students[i] + ' - ' + marks[i]);
-        result += '<p>'+arr[i]+'</p>';
-        console.log(arr);
+        arr.push(students[i] + ' - ' + marks[i]+' ');
     }
-    return result;
+    return arr;
 }
 
 function randomStudenRating(){
-    let arr = [];
-    let result = '';
+    const arr = [];
     for(let i=0; i<themes.length; i++){
-        arr.push(pairs[i]+' - '+themes[i]+' - '+getRandomNumber(1, 5));
-        result += '<p>'+arr[i]+'</p>';
+        arr.push(pairs[i]+' - '+themes[i]+' - '+getRandomNumber(1, 5)+' ');
     }
-    return result;
+    return arr;
 }
 
 document.querySelector('.first').innerHTML = getPair();
@@ -65,6 +58,6 @@ const pairs = getPair();
 
 document.querySelector('.second').innerHTML = pairAndSubject(pairs, themes);
 
-document.querySelector('.third').innerHTML = studentsRating();
+document.querySelector('.third').innerHTML = '<p>'+studentsRating()+'</p>';
 
 document.querySelector('.fourth').innerHTML = randomStudenRating();
