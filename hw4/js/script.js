@@ -7,6 +7,8 @@ function getRandomNumber(min, max) {
     return result;
 }
 
+console.log(getRandomNumber(10, 20));
+
 function getPair(){
     const boys = [];
     const girls = [];    
@@ -33,6 +35,7 @@ function pairAndSubject(n, m){
     for(let i=0; i<themes.length; i++){
         arr.push(pairs[i] + ' - ' + themes[i]+' ');
     }
+    
     return arr;
 }
 
@@ -49,6 +52,7 @@ function randomStudenRating(){
     for(let i=0; i<themes.length; i++){
         arr.push(pairs[i]+' - '+themes[i]+' - '+getRandomNumber(1, 5)+' ');
     }
+    console.log(arr);
     return arr;
 }
 
