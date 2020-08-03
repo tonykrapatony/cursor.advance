@@ -7,8 +7,6 @@ function getRandomNumber(min, max) {
     return result;
 }
 
-console.log(getRandomNumber(10, 20));
-
 function getPair(){
     const boys = [];
     const girls = [];    
@@ -22,45 +20,50 @@ function getPair(){
         } 
     });
     for(let i = 0; i <students.length/2; i++){
-        pairs.push(' '+[boys[i] + ' та ' + girls[i]]);
+        pairs.push([boys[i] + ' та ' + girls[i]]);
     }
     
     return pairs;
 }
 
+console.log(getPair());
 
 function pairAndSubject(n, m){
     const arr = [];
     
     for(let i=0; i<themes.length; i++){
-        arr.push(pairs[i] + ' - ' + themes[i]+' ');
+        arr.push([getPair()[i] + ' - ' + themes[i]]);
     }
     
     return arr;
 }
 
+console.log(pairAndSubject(getPair(), themes));
+
 function studentsRating(){
     const arr = [];
     for(let i=0; i<students.length; i++){
-        arr.push(students[i] + ' - ' + marks[i]+' ');
+        arr.push([students[i] + ' - ' + marks[i]]);
     }
     return arr;
 }
 
+console.log(studentsRating());
+
 function randomStudenRating(){
     const arr = [];
     for(let i=0; i<themes.length; i++){
-        arr.push(pairs[i]+' - '+themes[i]+' - '+getRandomNumber(1, 5)+' ');
+        arr.push([getPair()[i]+' - '+themes[i]+' - '+getRandomNumber(1, 5)+' ']);
     }
     console.log(arr);
     return arr;
 }
 
+console.log(studentsRating());
+
 document.querySelector('.first').innerHTML = getPair();
 
-const pairs = getPair();
-
-document.querySelector('.second').innerHTML = pairAndSubject(pairs, themes);
+document.querySelector('.second').innerHTML = pairAndSubject(getPair(), themes);
 
 document.querySelector('.third').innerHTML = '<p>'+studentsRating()+'</p>';
 
