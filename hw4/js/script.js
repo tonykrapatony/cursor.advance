@@ -20,7 +20,7 @@ function getPair(){
         } 
     });
     for(let i = 0; i <students.length/2; i++){
-        pairs.push([boys[i] + ' та ' + girls[i]]);
+        pairs.push([boys[i], girls[i]]);
     }
     
     return pairs;
@@ -32,7 +32,7 @@ function pairAndSubject(n, m){
     const arr = [];
     
     for(let i=0; i<themes.length; i++){
-        arr.push([getPair()[i] + ' - ' + themes[i]]);
+        arr.push([getPair()[i],themes[i]]);
     }
     
     return arr;
@@ -43,7 +43,7 @@ console.log(pairAndSubject(getPair(), themes));
 function studentsRating(){
     const arr = [];
     for(let i=0; i<students.length; i++){
-        arr.push([students[i] + ' - ' + marks[i]]);
+        arr.push([students[i], marks[i]]);
     }
     return arr;
 }
@@ -53,7 +53,7 @@ console.log(studentsRating());
 function randomStudenRating(){
     const arr = [];
     for(let i=0; i<themes.length; i++){
-        arr.push([getPair()[i]+' - '+themes[i]+' - '+getRandomNumber(1, 5)+' ']);
+        arr.push([getPair()[i], themes[i], getRandomNumber(1, 5)+' ']);
     }
     console.log(arr);
     return arr;
