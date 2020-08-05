@@ -24,15 +24,71 @@ const students = [{
     }
   }];
 
-
-function getSubjects (student){
+function getSubjects(student){
     const subjets = Object.keys(student.subjects);
-    const result = student.name + ' - ' + subjets.map(function (elem){
-        return elem[0].toUpperCase()+elem.slice(1).toLowerCase().replace(/_/gi, " ");
+    const result = subjets.map(function (elem){
+        return elem[0].toUpperCase()+elem.slice(1).toLowerCase().replace(/_/gi, ' ');
     });
     return result;
 }
-
 console.log(getSubjects(students[0]));
 console.log(getSubjects(students[1]));
 console.log(getSubjects(students[2]));
+
+function getAverageMark(student){
+    const subjets = Object.values(student.subjects);
+    const arr = subjets[0].concat(subjets[1], subjets[2]);
+    const average = arr.reduce(function (acc, mark){
+        return acc+=mark; 
+    });
+    return (average/arr.length).toFixed(2);
+}
+
+console.log(getAverageMark(students[0]));
+console.log(getAverageMark(students[1]));
+console.log(getAverageMark(students[2]));
+
+function getStudentInfo(student){
+    return `"name": ${student.name}, "course": ${student.course}, "averageMark": ${getAverageMark(student)}`;
+}
+
+console.log(getStudentInfo(students[0]));
+console.log(getStudentInfo(students[1]));
+console.log(getStudentInfo(students[2]));
+
+function getStudentsNames(students){
+    const arr = students.map(function(students){
+         return students.name
+    });
+    return arr.sort();
+}
+
+console.log(getStudentsNames(students));
+
+
+function getBestStudent(students){
+    let best;
+    if(getAverageMark(students[0])>getAverageMark(students[1]) &&  getAverageMark(students[0])>getAverageMark(students[2])){
+        best = students[0].name;    
+    } else if (getAverageMark(students[1])>getAverageMark(students[0]) &&  getAverageMark(students[1])>getAverageMark(students[2])){
+        best = students[1].name;  
+    } else {
+        best = students[2].name;  
+    }
+    return best;
+}
+console.log(getBestStudent(students));
+
+function calculateWordLetters(word) {
+    let count = {};
+    let str = word.toLowerCase().split('');
+    str.forEach(function(item){
+        if(count[item]){
+            count[item]++;
+        } else{
+            count[item] = 1;
+        }
+    });
+    return count;    
+}
+console.log(calculateWordLetters(prompt('Ввелдіть слово', '')));
