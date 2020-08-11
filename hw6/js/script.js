@@ -49,7 +49,11 @@ console.log(getAverageMark(students[1]));
 console.log(getAverageMark(students[2]));
 
 function getStudentInfo(student){
-    return `"name": ${student.name}, "course": ${student.course}, "averageMark": ${getAverageMark(student)}`;
+    const name = student.name;
+    const course = student.course;
+    const average_mark = getAverageMark(student);
+    const result = {name, course, average_mark};
+    return result;
 }
 
 console.log(getStudentInfo(students[0]));
