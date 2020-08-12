@@ -1,3 +1,7 @@
+//basic
+console.log("basic");
+console.log("");
+
 class Student {
     
     constructor( course, university, fullName){
@@ -29,7 +33,7 @@ class Student {
     getAverageMark() {
         let averageMark;
         averageMark = this._marks.reduce((acc,mark) => acc+= mark);
-        console.log(averageMark/this._marks.length)
+//        console.log(averageMark/this._marks.length);
         return averageMark/this._marks.length;
     }
     
@@ -47,11 +51,16 @@ ostap.getInfo();
 ostap.marks;
 ostap.marks = 5;
 ostap.marks;
-ostap.getAverageMark();
+console.log(ostap.getAverageMark());
 ostap.dismiss();
 ostap.marks;
 ostap.recover();
 ostap.marks;
+
+console.log("");
+console.log("advanced");
+console.log("");
+//advanced
 
 class newStudent extends Student {
     constructor( course,university, fullName){
@@ -59,10 +68,10 @@ class newStudent extends Student {
         (setInterval(() =>this.scholarship, 3000));
     }
     get scholarship(){
-        if(this.getAverageMark() < 4) {
-            console.log("У вас нема стипендії");
+        if(this.getAverageMark() >= 4 && this.student) {
+            console.log("Ви отримали 1400 грн. стипендії");
         } else {
-            console.log('Ви отримали 1400 грн. стипендії');
+            console.log("У вас нема стипендії");
         }
     }
 }
@@ -71,9 +80,9 @@ const ihor = new newStudent("1 курсу","Вищої Школи Психоте
 
 ihor.getInfo();
 ihor.marks;
-ihor.marks = 3;
+ihor.marks = 4;
 ihor.marks;
-ihor.getAverageMark();
+console.log(ostap.getAverageMark());
 ihor.dismiss()
 ihor.marks;
 ihor.recover();
