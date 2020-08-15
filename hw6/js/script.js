@@ -35,6 +35,14 @@ console.log(getSubjects(students[0]));
 console.log(getSubjects(students[1]));
 console.log(getSubjects(students[2]));
 
+document.querySelector('.subjects').innerHTML = `
+  <p>${students[0].name}: ${getSubjects(students[0])}</p>
+  <p><p>${students[1].name}: ${getSubjects(students[1])}</p></p>
+  <p>${students[2].name}: ${getSubjects(students[2])}</p>
+`;
+
+
+
 function getAverageMark(student){
     const subjets = Object.values(student.subjects);
     const arr = subjets[0].concat(subjets[1], subjets[2]);
@@ -48,6 +56,12 @@ console.log(getAverageMark(students[0]));
 console.log(getAverageMark(students[1]));
 console.log(getAverageMark(students[2]));
 
+document.querySelector('.averageMark').innerHTML = `
+  <p>${students[0].name}: ${getAverageMark(students[0])}</p>
+  <p><p>${students[1].name}: ${getAverageMark(students[1])}</p></p>
+  <p>${students[2].name}: ${getAverageMark(students[2])}</p>
+`;
+
 function getStudentInfo(student){
     const name = student.name;
     const course = student.course;
@@ -60,6 +74,10 @@ console.log(getStudentInfo(students[0]));
 console.log(getStudentInfo(students[1]));
 console.log(getStudentInfo(students[2]));
 
+document.querySelector('.studentInfo').innerHTML = `
+  <p>${getStudentInfo(students[0]).name}, ${getStudentInfo(students[0]).course}, ${getStudentInfo(students[0]).average_mark}</p> <p>${getStudentInfo(students[1]).name} ${getStudentInfo(students[1]).course} ${getStudentInfo(students[1]).average_mark}</p> <p>${getStudentInfo(students[2]).name} ${getStudentInfo(students[2]).course} ${getStudentInfo(students[2]).average_mark}</p>
+`;
+
 function getStudentsNames(students){
     const arr = students.map(function(students){
          return students.name
@@ -69,6 +87,9 @@ function getStudentsNames(students){
 
 console.log(getStudentsNames(students));
 
+document.querySelector('.studentsNames').innerHTML = `
+  <p>${getStudentsNames(students)}</p> 
+`;
 
 function getBestStudent(students){
     let best;
@@ -83,7 +104,12 @@ function getBestStudent(students){
 }
 console.log(getBestStudent(students));
 
-function calculateWordLetters(word) {
+document.querySelector('.bestStudent').innerHTML = `
+  <p>${getBestStudent(students)}</p> 
+`;
+
+function calculateWordLetters() {
+    const word = prompt('Введіть слово', '');
     let count = {};
     let str = word.toLowerCase().split('');
     str.forEach(function(item){
@@ -95,4 +121,8 @@ function calculateWordLetters(word) {
     });
     return count;    
 }
-console.log(calculateWordLetters(prompt('Ввелдіть слово', '')));
+console.log(calculateWordLetters());
+
+document.querySelector('.calculateLetters').innerHTML = `
+  <p>${calculateWordLetters()}</p> 
+`;

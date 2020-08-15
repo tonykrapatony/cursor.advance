@@ -17,9 +17,9 @@ class Student {
     
     get marks() {
         if(this.student) {
-            console.log(this._marks);
+            return this._marks;
         } else {
-            console.log(null);
+            return null;
         }
     }
     set marks(value) {
@@ -48,14 +48,13 @@ class Student {
 const ostap = new Student("1 курсу","Вищої Школи Психотерапії м.Одеса","Остап  Бендер");
 
 ostap.getInfo();
-ostap.marks;
+console.log(ostap.marks);
 ostap.marks = 5;
-ostap.marks;
+console.log(ostap.marks);
 console.log(ostap.getAverageMark());
 ostap.dismiss();
-ostap.marks;
 ostap.recover();
-ostap.marks;
+console.log(ostap.marks);
 
 console.log("");
 console.log("advanced");
@@ -79,11 +78,10 @@ class newStudent extends Student {
 const ihor = new newStudent("1 курсу","Вищої Школи Психотерапії м.Одеса","Ігор Виноградний");
 
 ihor.getInfo();
-ihor.marks;
+console.log(ihor.marks);
 ihor.marks = 4;
-ihor.marks;
+console.log(ihor.marks);
 console.log(ostap.getAverageMark());
 ihor.dismiss()
-ihor.marks;
 ihor.recover();
-ihor.marks;
+console.log(ihor.marks);
