@@ -5,7 +5,7 @@ window.addEventListener("keydown", function (event) {
     audio.play();
     audio.currentTime = 0;
     key.classList.add('play');
-    setTimeout(() => {key.classList.remove('play')}, 3000);
+    setTimeout(() => {key.classList.remove('play')}, 1000);
 });
 
 document.getElementById('81').addEventListener('click', function(){     
