@@ -10,7 +10,7 @@ function getRandomChines(length) {
 //            answer += String.fromCharCode(numberForChar);
 //        }
         while (a < length) {
-            numberForChar += 1;
+            numberForChar += waitTime;
             answer += String.fromCharCode(numberForChar);
             a++;
         }
