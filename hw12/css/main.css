@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url(../img/space_bg.jpg);
+    font-family: 'Russo One', sans-serif;
+    font-style: italic;
+}
+.logo {
+    width: 500px;
+    margin: 20px auto;
+    font-size: 50px;
+    font-weight: 500;
+    color: #F98820
+}
+.logo>img {
+    width: 100%;
+}
+
+.btns, .cntrl-btns  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cntrl-btns {
+    margin-top: 20px;
+    visibility: hidden;
+}
+#episode:active {
+    outline: none;
+}
+
+#episode {
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    color: #F98820;
+    background-color: rgba(51,8,9);
+    border: 2px solid #F98820;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-right: 25px;
+    font-style: italic;
+    cursor: pointer;
+}
+button {
+    width: 100px;
+    height: 40px;
+    margin-right: 25px;
+    color: #F98820;
+    background-color: rgba(51,8,9);
+    border: 2px solid #F98820;
+    border-radius: 8px;
+    box-sizing: border-box;
+    outline: none;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.result {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.result_item {
+    width: 25%;
+    height: 250px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #F98820;
+    font-size: 25px;
+    border: 5px solid #F98820;
+    border-radius: 10px;
+    box-sizing: border-box;
+}

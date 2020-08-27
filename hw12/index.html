@@ -3,15 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Асинхронність та Date.Проміси</title>
-    
+    <title>Робота з сервером</title>
+    <link rel="stylesheet" href="./css/main.css">
     
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/script.js" defer></script>
 </head>
 <body>
-       
-    <h3>Диись консоль</h3>
+    
+    <div class="wrap">
+        <div class="logo">
+            <h2>STAR WARS</h2>
+<!--            <img src="./img/logo.png" alt="star wars logo">-->
+        </div>
+
+        <div class="btns">
+            <select id="episode">
+                <option value="4" selected>Episode I – The Phantom Menace</option>
+                <option value="5">Episode II – Attack of the Clones</option>
+                <option value="6">Episode III – Revenge of the Sith</option>
+                <option value="1">Episode IV – A New Hope</option>
+                <option value="2">Episode V – The Empire Strikes Back</option>
+                <option value="3">Episode VI – Return of the Jedi</option>
+            </select>
+            <button id="caracters-btn" type="button">get characters</button>
+            <button id="planets-btn" type="button">get planets</button>
+        </div>
+        
+        <div class="cntrl-btns">
+            <button id="prev-btn" type="button">Previous</button>
+            <button id="next-btn" type="button">Next</button>
+        </div>
+        
+        <div class="result"></div>
+    </div>
     
 </body>
 </html>
