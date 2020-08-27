@@ -11,12 +11,12 @@ function getCharacters() {
             console.log(res.data.characters);
         })
         .then((charLinks) => {
-            const newLinks = [];
+            const newcharLinks = [];
             for (let i = 0; i < charLinks.length; i++) {
-                newLinks[i] = charLinks[i].replace("http://", "https://");
+                newcharLinks[i] = charLinks[i].replace("http://", "https://");
             }
             return Promise.all(
-                newLinks.map((el) => {
+                newcharLinks.map((el) => {
                     return axios.get(el).then((res) => res.data);
                 })
             );
