@@ -1,74 +1,59 @@
-const students = ["Саша", "Ігор", "Олена", "Іра", "Олексій", "Світлана"];
-const themes = ["Диференційне рівняння", "Теорія автоматів", "Алгоритми і структури даних"];
-const marks = [4, 5, 5, 3, 4, 5];
-
-function getRandomNumber(min, max) {
-    const result = Math.floor(min + Math.random() * (max + 1 - min));
-    return result;
-}
-
-function getPair(){
-    const boys = [];
-    const girls = [];    
-    const pairs = [];    
+class Student {
     
-    students.forEach(function(students){
-        if(students.endsWith('на') || students.endsWith('ра')){
-            girls.push(students);
+    constructor( course, university, fullName){
+        this.university = university;
+        this.course = course;
+        this.fullName= fullName;
+        this._marks=[4,5,5,4];
+        this.student = true;
+    }
+    getInfo() {
+        console.log(`"Студент ${this.course}, ${this.university}, ${this.fullName}"`)
+    }    
+    
+    get marks() {
+        if(this.student) {
+            return this._marks;
         } else {
-            boys.push(students);
-        } 
-    });
-    for(let i = 0; i <students.length/2; i++){
-        pairs.push([boys[i], girls[i]]);
+            return null;
+        }
+    }
+    set marks(value) {
+        if(this.student) {
+            return this._marks.push(value);
+        } else{
+            console.log(null);
+        }
     }
     
-    return pairs;
-}
-
-console.log(getPair());
-
-function pairAndSubject(n, m){
-    const arr = [];
-    
-    for(let i=0; i<themes.length; i++){
-        arr.push([getPair()[i],themes[i]]);
+    getAverageMark() {
+        let averageMark;
+        averageMark = this._marks.reduce((acc,mark) => acc+= mark);
+//        console.log(averageMark/this._marks.length);
+        return averageMark/this._marks.length;
     }
     
-    return arr;
-}
-
-console.log(pairAndSubject(getPair(), themes));
-
-function studentsRating(){
-    const arr = [];
-    for(let i=0; i<students.length; i++){
-        arr.push([students[i], marks[i]]);
+    dismiss(){
+        return this.student = false;
     }
-    return arr;
-}
-
-console.log(studentsRating());
-
-function randomStudenRating(){
-    const arr = [];
-    for(let i=0; i<themes.length; i++){
-        arr.push([getPair()[i], themes[i], getRandomNumber(1, 5)+' ']);
+    recover(){
+        return this.student = true;
     }
-    console.log(arr);
-    return arr;
 }
 
-console.log(studentsRating());
+const ostap = new Student("1 курсу","Вищої Школи Психотерапії м.Одеса","Остап  Бендер");
 
-document.querySelector('.first').innerHTML = getPair();
+export function infoOstapExp(){
+    ostap.getInfo();
+    console.log(ostap.marks);
+    ostap.marks = 5;
+    console.log(ostap.marks);
+    console.log(ostap.getAverageMark());
+    ostap.dismiss();
+    ostap.recover();
+    console.log(ostap.marks);
 
-document.querySelector('.second').innerHTML = pairAndSubject(getPair(), themes);
-
-document.querySelector('.third').innerHTML = '<p>'+studentsRating()+'</p>';
-
-document.querySelector('.fourth').innerHTML = randomStudenRating();
-
-const totalPairs = getPair(students);
-
-export {students, totalPairs}
+    console.log("");
+    console.log("advanced");
+    console.log("");
+}
