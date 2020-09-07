@@ -15,9 +15,11 @@ function getRandomChines(length) {
             a++;
         }
         setTimeout(() =>
-            resolve(answer)
+            resolve(console.log(answer))
         , length * waitTime);
     });
 };
 
- getRandomChines(4).then(res => console.log(res));
+getRandomChines(4);
+
+export {waitTime, getRandomChines}
